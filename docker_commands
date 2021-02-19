@@ -1,0 +1,39 @@
+## Docker commands used to build the application 
+docker build --tag techtrends --file dockerfile .
+
+## Docker commands used to run the application
+docker run -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs 0a202a9344bc
+
+## Logs from the container running the TechTrends application
+
+2021-02-17 11:52:29,349  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2021-02-17 11:53:10,419 172.17.0.1 - - [17/Feb/2021 11:53:10] "GET / HTTP/1.1" 200 -
+2021-02-17 11:53:10,453 172.17.0.1 - - [17/Feb/2021 11:53:10] "GET /static/css/main.css HTTP/1.1" 200 -
+2021-02-17 11:53:10,479 172.17.0.1 - - [17/Feb/2021 11:53:10] "GET /favicon.ico HTTP/1.1" 404 -
+2021-02-17 11:53:25,175 Accessed "About Us" page
+2021-02-17 11:53:25,181 172.17.0.1 - - [17/Feb/2021 11:53:25] "GET /about HTTP/1.1" 200 -
+2021-02-17 11:53:29,201 172.17.0.1 - - [17/Feb/2021 11:53:29] "GET /create HTTP/1.1" 200 -
+2021-02-17 11:54:06,310 New post created "Hello World"
+2021-02-17 11:54:06,313 172.17.0.1 - - [17/Feb/2021 11:54:06] "POST /create HTTP/1.1" 302 -
+2021-02-17 11:54:06,319 172.17.0.1 - - [17/Feb/2021 11:54:06] "GET / HTTP/1.1" 200 -
+2021-02-17 11:54:08,437 Retrieved Post Title: "2020 CNCF Annual Report"!
+2021-02-17 11:54:08,445 172.17.0.1 - - [17/Feb/2021 11:54:08] "GET /1 HTTP/1.1" 200 -
+2021-02-17 11:54:09,893 172.17.0.1 - - [17/Feb/2021 11:54:09] "GET / HTTP/1.1" 200 -
+2021-02-17 11:54:11,758 Retrieved Post Title: "Hello World"!
+2021-02-17 11:54:11,760 172.17.0.1 - - [17/Feb/2021 11:54:11] "GET /7 HTTP/1.1" 200 -
+2021-02-17 11:54:15,645 172.17.0.1 - - [17/Feb/2021 11:54:15] "GET / HTTP/1.1" 200 -
+2021-02-17 11:54:27,113 Retrieved Post Title: "Kubernetes v1.20 Release Notes"!
+2021-02-17 11:54:27,115 172.17.0.1 - - [17/Feb/2021 11:54:27] "GET /3 HTTP/1.1" 200 -
+2021-02-17 11:54:28,587 172.17.0.1 - - [17/Feb/2021 11:54:28] "GET / HTTP/1.1" 200 -
+2021-02-17 11:55:11,154 Accessed "About Us" page
+2021-02-17 11:55:11,155 172.17.0.1 - - [17/Feb/2021 11:55:11] "GET /about HTTP/1.1" 200 -
+2021-02-17 11:55:12,881 172.17.0.1 - - [17/Feb/2021 11:55:12] "GET / HTTP/1.1" 200 -
+2021-02-17 11:55:22,512 172.17.0.1 - - [17/Feb/2021 11:55:22] "GET /healthz HTTP/1.1" 200 -
+2021-02-17 11:55:28,295 Retrieved Post Title: "CNCF Cloud Native Interactive Landscape"!
+2021-02-17 11:55:28,296 172.17.0.1 - - [17/Feb/2021 11:55:28] "GET /4 HTTP/1.1" 200 -
+2021-02-17 11:55:36,795 Non existing Post with ID "30" is accessed
+2021-02-17 11:55:36,798 172.17.0.1 - - [17/Feb/2021 11:55:36] "GET /30 HTTP/1.1" 404 -
+2021-02-17 11:55:39,586 172.17.0.1 - - [17/Feb/2021 11:55:39] "GET / HTTP/1.1" 200 - 
