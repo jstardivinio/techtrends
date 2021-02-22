@@ -7,9 +7,9 @@ metadata:
   namespace: {{ .Values.namespace.name }}
 spec:
   ports:
-    port: {{ .Values.service.port }}
-    targetPort: {{ .Values.service.targetPort }}
-    protocol: {{ .Values.service.protocol }}
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: {{ .Values.service.protocol }}
   selector:
     service: {{ .Values.image.repository }}
   type: {{ .Values.service.type }}
