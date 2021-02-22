@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.image.repository }}
-        image: {{ .Values.repo.name }}:{{ .Values.image.tag }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.CPU }}
