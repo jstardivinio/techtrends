@@ -1,0 +1,9 @@
+apiVersion: v1
+name:  techtrends
+Description: Deploy Techtrends services
+Keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: John Adewale
+  email: jstar.divinio2015@gmail.com

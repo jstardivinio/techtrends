@@ -6,12 +6,15 @@ from flask import Flask, jsonify, json, render_template, request, url_for, redir
 from werkzeug.exceptions import abort
 
 logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG, stream=sys.stdout)
+dbConnections = 0
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
+    global dbConnections
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    dbConnections = dbConnections + 1
     return connection
 
 # Function to get a post using its ID
@@ -89,8 +92,7 @@ def healthz():
 def metrics():
     connection = get_db_connection()
     postCount = connection.execute('SELECT COUNT(posts.id) FROM posts').fetchone()[0]
-    connCount = 1
-    data = {"db_connection_count":connCount, "post_count":postCount }
+    data = {"db_connection_count":dbConnections, "post_count":postCount }
     response = app.response_class(
         response=json.dumps(data),
         status=200,
