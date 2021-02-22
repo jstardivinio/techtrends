@@ -7,7 +7,6 @@ metadata:
   namespace: sandbox
 spec:
   ports:
-  - name: "4111"
     port: 4111
     targetPort: 3111
     protocol: TCP
